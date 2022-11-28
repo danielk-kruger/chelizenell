@@ -1,0 +1,190 @@
+@import "../../utilities";
+
+nav {
+  position: fixed;
+  top: 0;
+  // left: 0;
+  // right: 0;
+  // left: 50%;
+  // transform: translateX(-50%);
+  z-index: 200;
+  width: 100%;
+  max-width: 992px;
+  // height: 80px;
+  font-family: $font-lora;
+  padding: 30px 40px 20px;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // background: green;
+  // overflow: hidden;
+  // transition: all 0.25s ease-in-out;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    width: 80%;
+    background: rgba($primary-dark, 0.5);
+    // z-index: 105;
+  }
+
+  .logo {
+    .box {
+      height: 36px;
+      width: 36px;
+      border: 2px solid $silver;
+      // padding: 10px;
+      // text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: border 0.25s ease-in-out;
+
+      span {
+        display: block;
+        color: $silver;
+        font-size: 16px;
+        letter-spacing: 1.4px;
+        transition: color 0.25s ease-in-out;
+      }
+    }
+  }
+
+  #mobileToggler {
+    // width: auto;
+    // position: relative;
+    cursor: pointer;
+    // margin-right: 2rem;
+    // background: green;
+
+    .bar {
+      display: block;
+      height: 2.5px;
+      width: 40px;
+      background: $silver;
+      margin: 10px 0px;
+      transition: transform 0.25s cubic-bezier(0, 0, 0, 1);
+    }
+
+    &.active {
+      .bar {
+        &:first-child {
+          -webkit-transform: translateY(6px) rotate(45deg);
+          -moz-transform: translateY(6px) rotate(45deg);
+          -ms-transform: translateY(6px) rotate(45deg);
+          -o-transform: translateY(6px) rotate(45deg);
+          transform: translateY(6px) rotate(45deg);
+        }
+
+        &:last-child {
+          -webkit-transform: translateY(-6px) rotate(-45deg);
+          -moz-transform: translateY(-6px) rotate(-45deg);
+          -ms-transform: translateY(-6px) rotate(-45deg);
+          -o-transform: translateY(-6px) rotate(-45deg);
+          transform: translateY(-6px) rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  &.nav-visible {
+    // left: 50%;
+    // padding: 30px 40px 20px;
+    // transform: translateX(-50%);
+    // justify-content: space-around;
+    // background: blue;
+
+    .logo {
+      .box {
+        border: 2px solid $black;
+
+        span {
+          color: $black;
+        }
+      }
+    }
+
+    #mobileToggler {
+      .bar {
+        background: $black;
+      }
+    }
+  }
+}
+
+.navbar {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: $gray;
+  z-index: 100;
+  font-family: $font-lora;
+  overflow: hidden;
+
+  .container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: auto;
+    text-align: left;
+    padding: 0px 0px 0px 50px;
+
+    li {
+      display: block;
+
+      &:first-child {
+        a::after {
+          width: 250%;
+        }
+      }
+
+      a {
+        padding: 25px 0px;
+
+        display: block;
+        font-size: 44px;
+        color: $primary-dark;
+        text-decoration: none;
+        letter-spacing: 1.2px;
+        position: relative;
+        z-index: 107;
+        transition: color 0.3s ease-in-out;
+
+        &::after {
+          content: url("../../assets/paint-stroke-1.svg");
+          height: 100px;
+          width: 200%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          transform: translate(-10%, 15%);
+          // background: pink;
+          opacity: 0;
+          transition: opacity 0.2s ease-in-out;
+
+          z-index: -1;
+        }
+
+        &:hover::after,
+        &:focus::after {
+          opacity: 1;
+        }
+
+        &:hover,
+        &:focus {
+          color: $silver;
+        }
+      }
+    }
+  }
+}
