@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/chelizenell/static/css/main.e0e50d2f.css",
+    "main.js": "/chelizenell/static/js/main.3e6b07a0.js",
+    "static/media/paint-stroke-1.svg": "/chelizenell/static/media/paint-stroke-1.c804a5326d3bb3cda651.svg",
+    "index.html": "/chelizenell/index.html",
+    "main.e0e50d2f.css.map": "/chelizenell/static/css/main.e0e50d2f.css.map",
+    "main.3e6b07a0.js.map": "/chelizenell/static/js/main.3e6b07a0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e0e50d2f.css",
+    "static/js/main.3e6b07a0.js"
+  ]
+}
