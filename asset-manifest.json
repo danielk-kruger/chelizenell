@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/chelizenell/static/css/main.3c9740f2.css",
+    "main.css": "/chelizenell/static/css/main.3b49aa1d.css",
     "main.js": "/chelizenell/static/js/main.3e6b07a0.js",
-    "static/media/paint-stroke-1.svg": "/chelizenell/static/media/paint-stroke-1.c804a5326d3bb3cda651.svg",
+    "static/media/paint-stroke-1.svg": "/chelizenell/static/media/paint-stroke-1.fee2879b919c7fd602a4.svg",
     "index.html": "/chelizenell/index.html",
-    "main.3c9740f2.css.map": "/chelizenell/static/css/main.3c9740f2.css.map",
+    "main.3b49aa1d.css.map": "/chelizenell/static/css/main.3b49aa1d.css.map",
     "main.3e6b07a0.js.map": "/chelizenell/static/js/main.3e6b07a0.js.map"
   },
   "entrypoints": [
-    "static/css/main.3c9740f2.css",
+    "static/css/main.3b49aa1d.css",
     "static/js/main.3e6b07a0.js"
   ]
 }
