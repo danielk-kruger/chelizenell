@@ -3,64 +3,49 @@
 nav {
   position: fixed;
   top: 0;
-  // left: 0;
-  // right: 0;
-  // left: 50%;
-  // transform: translateX(-50%);
   z-index: 200;
   width: 100%;
   max-width: 992px;
   // height: 80px;
   font-family: $font-lora;
-  padding: 30px 40px 20px;
+  padding: 30px 20px 20px;
   margin: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // background: green;
-  // overflow: hidden;
-  // transition: all 0.25s ease-in-out;
+  overflow: hidden;
+  background: $black;
 
-  &::after {
+  @include md-screen {
+    padding: 30px 5% 20px;
+  }
+
+  &.nav-mobile::after {
     content: "";
     position: absolute;
     bottom: 0px;
     left: 50%;
     transform: translateX(-50%);
     height: 2px;
-    width: 80%;
+    width: 90%;
+    // padding: 0px 20px;
     background: rgba($primary-dark, 0.5);
-    // z-index: 105;
   }
 
   .logo {
-    .box {
-      height: 36px;
-      width: 36px;
-      border: 2px solid $silver;
-      // padding: 10px;
-      // text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: border 0.25s ease-in-out;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-      span {
-        display: block;
-        color: $silver;
-        font-size: 16px;
-        letter-spacing: 1.4px;
-        transition: color 0.25s ease-in-out;
-      }
+    img {
+      object-fit: contain;
     }
   }
 
   #mobileToggler {
-    // width: auto;
-    // position: relative;
     cursor: pointer;
-    // margin-right: 2rem;
-    // background: green;
 
     .bar {
       display: block;
@@ -91,39 +76,16 @@ nav {
       }
     }
   }
-
-  &.nav-visible {
-    // left: 50%;
-    // padding: 30px 40px 20px;
-    // transform: translateX(-50%);
-    // justify-content: space-around;
-    // background: blue;
-
-    .logo {
-      .box {
-        border: 2px solid $black;
-
-        span {
-          color: $black;
-        }
-      }
-    }
-
-    #mobileToggler {
-      .bar {
-        background: $black;
-      }
-    }
-  }
 }
 
 .navbar {
   position: absolute;
   height: 100%;
   width: 100%;
-  background: $gray;
+  background: $black;
   z-index: 100;
   font-family: $font-lora;
+  padding-top: 30px;
   overflow: hidden;
 
   .container {
@@ -137,26 +99,34 @@ nav {
     text-align: left;
     padding: 0px 0px 0px 50px;
 
+    @include md-screen {
+      padding: 0px 0px 0px 20%;
+    }
+
     li {
       display: block;
 
       &:first-child {
         a::after {
-          width: 250%;
+          width: 275%;
         }
       }
 
       a {
-        padding: 25px 0px;
+        padding: 30px 0px;
 
         display: block;
         font-size: 44px;
-        color: $primary-dark;
+        color: $silver;
         text-decoration: none;
         letter-spacing: 1.2px;
         position: relative;
         z-index: 107;
         transition: color 0.3s ease-in-out;
+
+        @include md-screen {
+          padding: 50px 0px;
+        }
 
         &::after {
           content: url("../../assets/paint-stroke-1.svg");
@@ -168,11 +138,14 @@ nav {
           bottom: 0;
           right: 0;
           transform: translate(-10%, 15%);
-          // background: pink;
           opacity: 0;
+          pointer-events: none;
           transition: opacity 0.2s ease-in-out;
-
           z-index: -1;
+
+          @include md-screen {
+            transform: translate(-10%, 30%);
+          }
         }
 
         &:hover::after,
@@ -182,7 +155,7 @@ nav {
 
         &:hover,
         &:focus {
-          color: $silver;
+          color: $black;
         }
       }
     }

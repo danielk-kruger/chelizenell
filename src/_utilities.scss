@@ -1,18 +1,36 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500&family=Lora:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Roboto+Condensed:wght@400;700&display=swap");
 
-$font-josefin: "Josefin Sans", sans-serif;
+$font-roboto: "Roboto Condensed", sans-serif;
 $font-lora: "Lora", serif;
 
 // $bg-dark: #1d1e2c;
 // $bg-dark: #0a0908;
 $bg-dark: linear-gradient(60deg, #0a0908 10%, #1d1e2c 80%);
-$black: #1d1e2c;
+$black: #0a0908;
 // F2F4F3
 
 $primary-dark: #40434e;
 $silver: #f2f4f3;
 $gray: #c4bbaf;
 
+$breakpoint-md: 760px;
+$breakpoint-lg: 992px;
+
+$bright-yellow: #f6aa1c;
+$yellow: #f6e27f;
+
 body {
-  font-family: $font-josefin;
+  font-family: $font-roboto;
+}
+
+@mixin md-screen {
+  @media screen and (min-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin lg-screen {
+  @media screen and (min-width: $breakpoint-lg) {
+    @content;
+  }
 }

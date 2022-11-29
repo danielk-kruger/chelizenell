@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 
 import "./nav-mobile.scss";
 
+import CNLogo from "../../assets/Chelize Nell Logo - Mobile.svg";
+
 const containerVariants = {
   hidden: {
     opacity: 0,
@@ -37,11 +39,9 @@ const NavMobile = () => {
 
   return (
     <>
-      <nav className={`${toggleNav && "nav-visible"}`}>
+      <nav className={`nav-mobile ${toggleNav && "nav-visible"}`}>
         <div className="logo">
-          <div className="box">
-            <span>CN</span>
-          </div>
+          <img src={CNLogo} alt="" />
         </div>
         <div
           id="mobileToggler"

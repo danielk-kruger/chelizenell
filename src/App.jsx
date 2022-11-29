@@ -6,7 +6,7 @@ import { Home, Nav } from "./components/";
 import NavMobile from "./components/Nav/NavMobile";
 
 const App = () => {
-  const isMobile = useMediaQuery({ query: `(max-width: 768px)` });
+  const isMobile = useMediaQuery({ query: `(max-width: 850px)` });
 
   return (
     <>
