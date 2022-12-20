@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/chelizenell/static/css/main.45cdeeeb.css",
-    "main.js": "/chelizenell/static/js/main.77ab9f8b.js",
+    "main.css": "/chelizenell/static/css/main.4588ce94.css",
+    "main.js": "/chelizenell/static/js/main.4c5dd011.js",
     "static/media/paint-stroke-1.svg": "/chelizenell/static/media/paint-stroke-1.fee2879b919c7fd602a4.svg",
     "static/media/paint-stroke-yellow.svg": "/chelizenell/static/media/paint-stroke-yellow.0d86739e65dd5bcd233a.svg",
     "static/media/Chelize Nell Logo - Mobile.svg": "/chelizenell/static/media/Chelize Nell Logo - Mobile.a5c09922bb5a2aab3b64f5bf13cf5322.svg",
     "index.html": "/chelizenell/index.html",
-    "main.45cdeeeb.css.map": "/chelizenell/static/css/main.45cdeeeb.css.map",
-    "main.77ab9f8b.js.map": "/chelizenell/static/js/main.77ab9f8b.js.map"
+    "main.4588ce94.css.map": "/chelizenell/static/css/main.4588ce94.css.map",
+    "main.4c5dd011.js.map": "/chelizenell/static/js/main.4c5dd011.js.map"
   },
   "entrypoints": [
-    "static/css/main.45cdeeeb.css",
-    "static/js/main.77ab9f8b.js"
+    "static/css/main.4588ce94.css",
+    "static/js/main.4c5dd011.js"
   ]
 }
