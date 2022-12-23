@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
 
 import "./nav-mobile.scss";
 
@@ -36,17 +37,27 @@ const childVariants = {
 
 const NavMobile = () => {
   const [toggleNav, setToggleNav] = useState(false);
+  const isMobile = useMediaQuery({ query: `(max-width: 850px)` });
+
+  const handleLink = () => {
+    setTimeout(() => {
+      setToggleNav(!toggleNav);
+    }, 600);
+  };
 
   return (
     <>
-      <nav className={`nav-mobile ${toggleNav && "nav-visible"}`}>
+      <nav className={`nav-mobile ${toggleNav ? "nav-visible" : ""}`}>
         <div className="logo">
           <img src={CNLogo} alt="" />
         </div>
         <div
           id="mobileToggler"
-          className={`${toggleNav && "active"}`}
-          onClick={() => setToggleNav(!toggleNav)}
+          className={`${toggleNav ? "active" : ""}`}
+          onClick={() => {
+            setToggleNav(!toggleNav);
+            document.body.style.overflowY = !toggleNav ? "hidden" : "auto";
+          }}
         >
           <span className="bar"></span>
           <span className="bar"></span>
@@ -56,9 +67,9 @@ const NavMobile = () => {
       {toggleNav && (
         <motion.ul
           className="navbar"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.3, ease: "easeInOut" }}
+          variants={containerVariants}
+          initial="initial"
+          animate={toggleNav ? "animate" : "initial"}
         >
           <motion.div
             className="container"
@@ -67,21 +78,37 @@ const NavMobile = () => {
             animate="visible"
           >
             <motion.li className="navbar-item" variants={childVariants}>
-              <a href="#" className="navbar-item_link">
+              <a
+                href="#"
+                className="navbar-item_link"
+                onClick={isMobile && handleLink}
+              >
                 Home
               </a>
             </motion.li>
             <motion.li className="navbar-item" variants={childVariants}>
-              <a href="#" className="navbar-item_link">
+              <a
+                href="#"
+                className="navbar-item_link"
+                onClick={isMobile && handleLink}
+              >
                 Portfolio
               </a>
             </motion.li>
             <motion.li className="navbar-item" variants={childVariants}>
-              <a href="#" className="navbar-item_link">
+              <a
+                href="#"
+                className="navbar-item_link"
+                onClick={isMobile && handleLink}
+              >
                 About Me
               </a>
             </motion.li>
-            <motion.li className="navbar-item" variants={childVariants}>
+            <motion.li
+              className="navbar-item"
+              variants={childVariants}
+              onClick={isMobile && handleLink}
+            >
               <a href="#" className="navbar-item_link">
                 Contact
               </a>

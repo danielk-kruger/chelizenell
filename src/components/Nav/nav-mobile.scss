@@ -1,24 +1,22 @@
 @import "../../utilities";
 
 nav {
-  position: fixed;
+  position: sticky;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 200;
   width: 100%;
-  max-width: 992px;
-  // height: 80px;
+  // max-width: 992px;
+  height: 80px;
   font-family: $font-lora;
-  padding: 30px 20px 20px;
+  padding: 20px 5px 0px;
   margin: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
   background: $black;
-
-  @include md-screen {
-    padding: 30px 5% 20px;
-  }
 
   &.nav-mobile::after {
     content: "";
@@ -33,24 +31,30 @@ nav {
   }
 
   .logo {
-    height: 40px;
-    width: 40px;
+    height: 60px;
+    width: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
 
     img {
-      object-fit: contain;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
     }
   }
 
   #mobileToggler {
+    margin-right: 15px;
     cursor: pointer;
+    height: 40px;
+    width: 40px;
+    // background: blue;
 
     .bar {
       display: block;
       height: 2.5px;
-      width: 40px;
+      width: 100%;
       background: $silver;
       margin: 10px 0px;
       transition: transform 0.25s cubic-bezier(0, 0, 0, 1);
@@ -79,14 +83,18 @@ nav {
 }
 
 .navbar {
-  position: absolute;
-  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
   width: 100%;
   background: $black;
-  z-index: 100;
   font-family: $font-lora;
   padding-top: 30px;
   overflow: hidden;
+  z-index: 100;
 
   .container {
     height: 100%;
@@ -149,12 +157,14 @@ nav {
         }
 
         &:hover::after,
-        &:focus::after {
+        &:focus::after,
+        &.active::after {
           opacity: 1;
         }
 
         &:hover,
-        &:focus {
+        &:focus,
+        &.active {
           color: $black;
         }
       }

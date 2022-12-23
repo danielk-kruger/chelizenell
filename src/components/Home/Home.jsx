@@ -1,5 +1,4 @@
-import React from "react";
-import Typed from "react-typed";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 
@@ -28,62 +27,36 @@ const childVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.6,
-      ease: "easeInOut",
+      duration: 1,
+      ease: "easeOut",
     },
   },
 };
 
 const Home = () => {
   const isMobile = useMediaQuery({ query: `(max-width: 600px)` });
+  // const paintElement = useRef();
 
   return (
     <section id="home">
       <div className="container">
-        <motion.div
-          className="hero"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.3, ease: "easeInOut" }}
-        >
+        <div className="hero">
           <motion.div
             className="hero-intro"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
           >
-            <motion.h1 variants={childVariants}>Hi there,</motion.h1>
-            <motion.h3 variants={childVariants}>
+            <motion.h1>Hi there!</motion.h1>
+            <motion.h3>
               I'm <span>Chelize</span>
             </motion.h3>
+            <motion.p variants={childVariants}>
+              A graphic designer with a passion for creating visually stunning
+              and effective designs for a range of clients.
+            </motion.p>
           </motion.div>
-          <motion.div
-            className="hero-details"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            <motion.div variants={childVariants}>
-              <Typed
-                strings={[
-                  `I Specialize in ${isMobile ? "<br />" : ""} Graphic Design`,
-                  `I Specialize in ${
-                    isMobile ? "<br />" : ""
-                  } Digital Marketing`,
-                  `I Specialize in ${isMobile ? "<br />" : ""} Branding`,
-                ]}
-                typeSpeed={60}
-                backSpeed={40}
-                loop
-              >
-                <span></span>
-              </Typed>
-              <motion.p variants={childVariants}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
-                assumenda dolor eius.
-              </motion.p>
-            </motion.div>
-          </motion.div>
+
           <motion.div
             className="cta"
             variants={containerVariants}
@@ -91,13 +64,15 @@ const Home = () => {
             animate="visible"
           >
             <motion.button className="btn-outline" variants={childVariants}>
-              See my work
+              See My Portfolio
             </motion.button>
             <motion.button className="btn-solid" variants={childVariants}>
-              Download CV
+              Let's get in touch!
             </motion.button>
           </motion.div>
-        </motion.div>
+        </div>
+        {/* TODO add an animated <Scroll down> indicator */}
+        {/* <Portfolio /> */}
       </div>
     </section>
   );

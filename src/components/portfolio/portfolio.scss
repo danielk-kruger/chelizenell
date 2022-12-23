@@ -1,0 +1,106 @@
+@import "../../utilities";
+
+/* In my case, I use these CSS styles in my App.css file*/
+#portfolio {
+  height: 120vh;
+  // max-height: 120vh;
+  background: $black;
+  color: $silver;
+  width: 100%;
+  padding: 2rem 0px 0rem;
+  overflow: hidden;
+  // overflow: hidden;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 425px) and (max-height: 750px) {
+    // max-height: 150vh;
+    height: 140vh;
+  }
+
+  .container {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    .portfolio-content {
+      flex: 1;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 4rem;
+
+      h1 {
+        display: block;
+        position: relative;
+        font-size: 45px;
+        line-height: 45px;
+        z-index: 1;
+        color: $text-dark;
+        font-family: $font-lora;
+        font-weight: 500;
+        padding: 25px 0px;
+
+        &::after {
+          content: url("../../assets/paint-stroke-title.svg");
+          display: block;
+          position: absolute;
+          inset: 0;
+          z-index: -1;
+          transform: translate(18%, -5%) scale(1.1, 0.8);
+          // width: 100%;
+        }
+      }
+
+      p {
+        display: block;
+        // margin: 0 auto;
+        text-align: center;
+        // text-transform: capitalize;
+        color: $silver;
+        width: 100%;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 1.1px;
+        font-family: $font-roboto;
+        // margin-top: 2rem;
+
+        &.lead {
+          // margin-top: 1rem;
+          padding: 20px 0px;
+        }
+      }
+    }
+
+    .portfolio {
+      flex: 2;
+      text-align: center;
+
+      h2 {
+        font-size: 16px;
+        font-weight: bold;
+        padding-bottom: 15px;
+      }
+    }
+  }
+}
+
+.swiper {
+  width: 280px;
+  // max-height: 60vh;
+  height: 480px;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}

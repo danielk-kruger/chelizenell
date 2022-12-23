@@ -1,0 +1,158 @@
+@import "../../utilities";
+
+section#process {
+  padding-top: 4rem;
+  height: 230vh;
+  width: 100%;
+  background: $black;
+  overflow: hidden;
+
+  @media screen and (max-width: 425px) and (max-height: 750px) {
+    // max-height: 150vh;
+    height: 280vh;
+  }
+
+  @media screen and (max-width: 425px) and (min-height: 890px) {
+    // max-height: 150vh;
+    height: 210vh;
+  }
+
+  .container {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    row-gap: 6rem;
+    align-items: center;
+    padding: 30px 0px;
+
+    .process-intro {
+      text-align: center;
+      // margin-bottom: 40px;
+
+      h1 {
+        display: block;
+        position: relative;
+        font-size: 38px;
+        line-height: 38px;
+        z-index: 1;
+        color: $text-dark;
+        font-family: $font-lora;
+        font-weight: 500;
+
+        padding: 25px 0px;
+
+        &::after {
+          content: url("../../assets/paint-stroke-title.svg");
+          display: block;
+          position: absolute;
+          inset: 0;
+          z-index: -1;
+          transform: translate(25%, -10%) scale(1.5, 0.75);
+        }
+      }
+
+      p {
+        color: $silver;
+        padding: 20px 10px 0px;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 1.1px;
+        font-family: $font-roboto;
+      }
+    }
+
+    .process-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .step {
+        height: 400px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        text-align: left;
+
+        &:nth-child(even) {
+          align-items: flex-end;
+          text-align: right;
+        }
+
+        .number {
+          // float: right;
+          height: 150px;
+          width: 150px;
+          background-image: url("../../assets/Circle-paint.svg");
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center bottom;
+          text-align: center;
+          display: grid;
+          place-items: center;
+          align-items: center;
+          padding-top: 20px;
+
+          h1 {
+            display: block;
+            font-size: 58px;
+            color: $text-dark;
+            z-index: 2;
+            font-family: $font-lora;
+          }
+        }
+
+        &-content {
+          padding: 20px;
+          color: $silver;
+          font-family: $font-roboto;
+
+          h2 {
+            font-size: 28px;
+            line-height: 29.2px;
+            font-weight: 500;
+            color: darken($bright-yellow, 2%);
+          }
+
+          p {
+            padding-top: 10px;
+            // padding: 10px 10px 0px;
+            font-size: 16px;
+            line-height: 1.5;
+            letter-spacing: 1.1px;
+            // width: 90%;
+          }
+        }
+
+        &.left {
+          .number,
+          .step-content * {
+            opacity: 0;
+            transform: translateX(-20%);
+          }
+        }
+
+        &.right {
+          .number,
+          .step-content * {
+            opacity: 0;
+            transform: translateX(20%);
+          }
+        }
+
+        &.left.show,
+        &.right.show {
+          .number,
+          .step-content * {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+      }
+    }
+  }
+}

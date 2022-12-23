@@ -7,6 +7,7 @@ $font-lora: "Lora", serif;
 // $bg-dark: #0a0908;
 $bg-dark: linear-gradient(60deg, #0a0908 10%, #1d1e2c 80%);
 $black: #0a0908;
+$text-dark: #1d1d1d;
 // F2F4F3
 
 $primary-dark: #40434e;
@@ -16,11 +17,13 @@ $gray: #c4bbaf;
 $breakpoint-md: 760px;
 $breakpoint-lg: 992px;
 
-$bright-yellow: #f6aa1c;
+$bright-yellow: #ffea00;
+$dark-yellow: #ffd000;
 $yellow: #f6e27f;
 
 body {
   font-family: $font-roboto;
+  // width: 100vw;
 }
 
 @mixin md-screen {
